@@ -26,7 +26,7 @@ Flixster is an app that allows users to browse movies from the [The Movie Databa
 <img src="WalkThroughHorizontal.gif" width=600><br>
 
 ### Notes
-Describe any challenges encountered while building the app.
+Most of the time was spent on implementing the Adapter and parsing JSON data to display on screen.
 
 ### Open-source libraries used
 
