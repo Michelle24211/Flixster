@@ -71,7 +71,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             String a = "http://image.tmdb.org/t/p/w185";
             if (orientation == Configuration.ORIENTATION_PORTRAIT) {
                 a = a + movies.poster;
-                Glide.with(context).load(a).override(700,800).into(poster);
+                Glide.with(context).load(a).placeholder(R.drawable.ic_launcher_background).override(700,800).into(poster);
             } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                 a  =  a + movies.landPoster;
                 Glide.with(context).load(a).override(1000,1000).into(poster);
