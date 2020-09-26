@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                             JSONArray array = json.jsonObject.getJSONArray("results");
                             for(int i = 0; i < array.length(); i++){
                                 JSONObject obj = array.getJSONObject(i);
-                                Movies movie = new Movies(obj.get("poster_path").toString(), obj.get("title").toString(), obj.get("overview").toString(),obj.get("backdrop_path").toString());
+                                Movies movie = new Movies(obj.get("poster_path").toString(), obj.get("title").toString(), obj.get("overview").toString(),obj.get("backdrop_path").toString(), Double.parseDouble(obj.get("vote_average").toString()));
                                 moviesList.add(movie);
                             }
 
