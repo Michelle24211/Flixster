@@ -1,7 +1,9 @@
 # Flixster
 Flixster is an app that allows users to browse movies from the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
-//📝 `NOTE - PASTE PART 2 SNIPPET HERE:` 
+## Flixster Part 2
+<img src="Week2.gif" width=250><br>
+<img src="Week2Horizontal.gif" width=600><br>
 
 ---
 
