@@ -19,6 +19,7 @@
 
     <TextView
         android:id="@+id/title"
+        android:transitionName="title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toEndOf="@+id/poster"
@@ -31,6 +32,8 @@
         android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="6"
         android:layout_below="@+id/title"
         android:layout_toRightOf="@+id/poster"
         android:textColor="#ECE5E5"

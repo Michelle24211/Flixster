@@ -20,9 +20,10 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 
-public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     private List<Movies> moviesList;
     public static Context context;
     // Provide a suitable constructor (depends on the kind of dataset)
@@ -58,11 +59,11 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         switch(viewType){
             case POPULAR:
                 View v1  = inflater.inflate(R.layout.popular_movie, parent, false);
-                viewHolder = new AdapterPopular((RelativeLayout) v1);
+                viewHolder = new AdapterPopular((RelativeLayout) v1, moviesList);
                 break;
             default:
                 View v2  =  inflater.inflate(R.layout.movie, parent, false);
-                viewHolder = new AdapterDefault((RelativeLayout) v2);
+                viewHolder = new AdapterDefault((RelativeLayout) v2, moviesList);
                 break;
         }
 
@@ -102,6 +103,8 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     private void configureDefaultViewHolder1(AdapterDefault holder, int position){
+        int radius = 30;
+        int margin = 10;
         Movies movie = moviesList.get(position);
         holder.getTitle().setText(movie.title);
         holder.getDescription().setText(movie.description);
@@ -109,10 +112,10 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         String a;
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {
             a = "http://image.tmdb.org/t/p/w185" + movie.poster;
-            Glide.with(context).load(a).placeholder(R.drawable.ic_launcher_background).override(700,800).into(holder.getPoster());
+            Glide.with(context).load(a).transform(new RoundedCornersTransformation(radius, margin)).placeholder(R.drawable.ic_launcher_background).override(500,500).into(holder.getPoster());
         } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
             a  =  "http://image.tmdb.org/t/p/w185" + movie.landPoster;
-            Glide.with(context).load(a).override(1000,1000).into(holder.getPoster());
+            Glide.with(context).load(a).transform(new RoundedCornersTransformation(radius, margin)).override(500,500).into(holder.getPoster());
         }
 
     }
@@ -122,4 +125,5 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public int getItemCount() {
         return moviesList.size();
     }
+
 }
