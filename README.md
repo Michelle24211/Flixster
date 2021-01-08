@@ -54,4 +54,4 @@ Most of the time was spent on implementing the Adapter and parsing JSON data to 
 ### Open-source libraries used
 
 - [Android Async HTTP](https://github.com/codepath/CPAsyncHttpClient) - Simple asynchronous HTTP requests with JSON parsing
-- [Glide](https://github.com/bumptech/glide) - Image loading and caching library for Androids
+- [Glide](https://com/bumptech/glide) - Image loading and caching library for Androids
